@@ -1,0 +1,22 @@
+{
+  "name": "local-to-global",
+  "version": "0.1.0",
+  "description": "Local classes to global classes",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larshp/local-to-global.git"
+  },
+  "keywords": [
+    "ABAP"
+  ],
+  "author": "Lars Hvam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larshp/local-to-global/issues"
+  },
+  "homepage": "https://github.com/larshp/local-to-global#readme"
+}
