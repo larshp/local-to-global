@@ -105,7 +105,6 @@ describe("test 6, exception", () => {
     "imp\n" +
     "ENDCLASS.";
   let result = new Parser().run(test);
-  console.dir(result);
   it("should have 1 class", () => {
     expect(Object.keys(result).length).to.equals(1);
   });

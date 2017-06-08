@@ -1,5 +1,5 @@
-'use strict';
-var fs = require('fs');
+"use strict";
+let fs = require("fs");
 
 module.exports = class Writer {
   run(outDir, classes) {
@@ -69,4 +69,4 @@ module.exports = class Writer {
       " </asx:abap>\n" +
       "</abapGit>";
   }
-}
+};

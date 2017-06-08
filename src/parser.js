@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = class Parser {
   run(code) {
@@ -62,4 +62,4 @@ module.exports = class Parser {
       this.list[name].testing = true;
     }
   }
-}
+};

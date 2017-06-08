@@ -4,7 +4,7 @@
   "description": "Local classes to global classes",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive test"
+    "test": "mocha --recursive test && eslint 'src/**'"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/larshp/local-to-global#readme",
   "devDependencies": {
     "chai": "^4.0.2",
+    "eslint": "^3.19.0",
     "mocha": "^3.4.2"
   }
 }

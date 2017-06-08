@@ -1,9 +1,9 @@
 // node src/index.js ../abapGit/src/ ./out/
 
-'use strict';
-var fs = require('fs');
-var Parser = require("./parser.js");
-var Writer = require("./writer.js");
+"use strict";
+let fs = require("fs");
+let Parser = require("./parser.js");
+let Writer = require("./writer.js");
 
 class Run {
   execute(input, outDir) {
@@ -19,8 +19,8 @@ class Run {
 
 // read all files into 1 string
   readFiles(input) {
-    var files = fs.readdirSync(input);
-    var ret = "";
+    let files = fs.readdirSync(input);
+    let ret = "";
     for(let file of files) {
       ret = ret + fs.readFileSync(input + file, "UTF8") + "\n";
     }
