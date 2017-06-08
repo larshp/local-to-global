@@ -25,8 +25,10 @@ module.exports = class Writer {
         console.log("rename: " + cla);
       }
 
-      fs.writeFileSync(outDir + cla + ".abap", contents, "UTF8");
-      fs.writeFileSync(outDir + cla + ".xml", meta, "UTF8");
+      let ext = classes[cla].interface?"intf":"clas";
+
+      fs.writeFileSync(outDir + cla + "." + ext + ".abap", contents, "UTF8");
+      fs.writeFileSync(outDir + cla + "." + ext + ".xml", meta, "UTF8");
     }
   }
 
