@@ -21,6 +21,7 @@ module.exports = class Parser {
           && ( line.match(/^\s*CLASS \w.*/i)
           || line.match(/^\s*INTERFACE \w.*/i))
           && !line.includes("DEFERRED")) {
+//        console.log("start" + line);
         start = line;
       } else if (line.match(/^\s*ENDCLASS\..*/i)
           || line.match(/^\s*ENDINTERFACE\..*/i)) {
@@ -39,11 +40,6 @@ module.exports = class Parser {
   }
 
   classify(start, body) {
-    if (start.includes("INHERITING FROM cx")
-        || start.includes("INHERITING FROM lcx")) {
-      return;
-    }
-
     let name = "";
     if (start.includes("CLASS")) {
       name = start.match(/^\s*CLASS\s(\w+).*/i)[1];

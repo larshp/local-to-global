@@ -13,7 +13,11 @@ module.exports = class Writer {
         contents = classes[cla].interface;
         meta = this.interfaceMeta(cla);
       } else {
-        contents = classes[cla].def + "\n\n" + classes[cla].impl;
+        contents = classes[cla].def;
+        if (classes[cla].impl) {
+// some classes only inherits
+          contents = contents + "\n\n" + classes[cla].impl;
+        }
         meta = this.classMeta(cla);
       }
 
