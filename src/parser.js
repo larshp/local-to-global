@@ -18,10 +18,9 @@ module.exports = class Parser {
       line = line.replace(/LCX_/g, "ZCX_ABAPGIT_");
 
       if (start === ""
-          && ( line.match(/^\s*CLASS \w.*/i)
+          && (line.match(/^\s*CLASS \w.*/i)
           || line.match(/^\s*INTERFACE \w.*/i))
           && !line.includes("DEFERRED")) {
-//        console.log("start" + line);
         start = line;
       } else if (line.match(/^\s*ENDCLASS\..*/i)
           || line.match(/^\s*ENDINTERFACE\..*/i)) {

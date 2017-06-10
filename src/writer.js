@@ -25,6 +25,11 @@ module.exports = class Writer {
         console.log("rename: " + cla);
       }
 
+      contents = contents.replace(/\s*FRIENDS(\s+ltcl_\w+)+/, "");
+
+      contents = contents.replace(/\s*CLASS zcl_(\w+) DEFINITION /, "CLASS zcl_$1 DEFINITION PUBLIC ");
+      contents = contents.replace(/\s*INTERFACE zif_(\w+)/, "INTERFACE zif_$1 PUBLIC");
+
       let ext = classes[cla].interface?"intf":"clas";
 
       fs.writeFileSync(outDir + cla + "." + ext + ".abap", contents, "UTF8");
