@@ -26,8 +26,8 @@ module.exports = class Writer {
       }
 
       contents = contents.replace(/\s*FRIENDS(\s+ltcl_\w+)+/, "");
-
-      contents = contents.replace(/\s*CLASS zc(.)_(\w+) DEFINITION(\s+)/, "CLASS zc$1_$2 DEFINITION PUBLIC$3");
+      contents = contents.replace(/\s*CLASS zc(.)_(\w+) DEFINITION(\s+)?/, "CLASS zc$1_$2 DEFINITION PUBLIC$3");
+      contents = contents.replace(/FRIENDS z/,"GLOBAL FRIENDS z");
       contents = contents.replace(/\s*INTERFACE zif_(\w+)/, "INTERFACE zif_$1 PUBLIC");
 
       let ext = classes[cla].interface?"intf":"clas";

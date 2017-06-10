@@ -11,10 +11,10 @@ module.exports = class Parser {
 
     for (let line of lines) {
       line = line.replace(/lcl_/g, "zcl_abapgit_");
-      line = line.replace(/lif_/g, "zif_abapgit_");
+      line = line.replace(/([\s">])lif_/g, "$1zif_abapgit_");
       line = line.replace(/lcx_/g, "zcx_abapgit_");
       line = line.replace(/LCL_/g, "ZCL_ABAPGIT_");
-      line = line.replace(/LIF_/g, "ZIF_ABAPGIT_");
+      line = line.replace(/([\s">])LIF_/g, "$1ZIF_ABAPGIT_");
       line = line.replace(/LCX_/g, "ZCX_ABAPGIT_");
 
       if (start === ""
