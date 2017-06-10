@@ -27,7 +27,7 @@ module.exports = class Writer {
 
       contents = contents.replace(/\s*FRIENDS(\s+ltcl_\w+)+/, "");
 
-      contents = contents.replace(/\s*CLASS zcl_(\w+) DEFINITION /, "CLASS zcl_$1 DEFINITION PUBLIC ");
+      contents = contents.replace(/\s*CLASS zc(.)_(\w+) DEFINITION(\s+)/, "CLASS zc$1_$2 DEFINITION PUBLIC$3");
       contents = contents.replace(/\s*INTERFACE zif_(\w+)/, "INTERFACE zif_$1 PUBLIC");
 
       let ext = classes[cla].interface?"intf":"clas";
@@ -46,7 +46,6 @@ module.exports = class Writer {
       "    <CLSNAME>" + name.toUpperCase() + "</CLSNAME>\n" +
       "    <VERSION>1</VERSION>\n" +
       "    <LANGU>E</LANGU>\n" +
-      "    <DESCRIPT></DESCRIPT>\n" +
       "    <EXPOSURE>2</EXPOSURE>\n" +
       "    <STATE>1</STATE>\n" +
       "    <UNICODE>X</UNICODE>\n" +
@@ -65,7 +64,6 @@ module.exports = class Writer {
       "    <CLSNAME>" + name.toUpperCase() + "</CLSNAME>\n" +
       "    <VERSION>1</VERSION>\n" +
       "    <LANGU>E</LANGU>\n" +
-      "    <DESCRIPT></DESCRIPT>\n" +
       "    <EXPOSURE>2</EXPOSURE>\n" +
       "    <STATE>1</STATE>\n" +
       "    <CLSCCINCL>X</CLSCCINCL>\n" +
