@@ -5,7 +5,7 @@ let Parser = require("./../src/parser.js");
 
 let expect = chai.expect;
 
-function check(result, impl = true) {
+function check(result, impl) {
   expect(result).to.be.a('object');
   expect(result.def).to.be.a('string');
   if (impl) {
@@ -27,7 +27,7 @@ describe("test 1, basic", () => {
     expect(Object.keys(result).length).to.equals(1);
   });
   it("foo class", () => {
-    check(result['zcl_abapgit_foo']);
+    check(result['zcl_abapgit_foo'], true);
   });
 });
 
@@ -38,7 +38,7 @@ describe("test 2, preceding comment", () => {
     expect(Object.keys(result).length).to.equals(1);
   });
   it("foo class", () => {
-    check(result['zcl_abapgit_foo']);
+    check(result['zcl_abapgit_foo'], true);
   });
 });
 
@@ -49,10 +49,10 @@ describe("test 3, two classes", () => {
     expect(Object.keys(result).length).to.equals(2);
   });
   it("foo class", () => {
-    check(result['zcl_abapgit_foo']);
+    check(result['zcl_abapgit_foo'], true);
   });
   it("bar class", () => {
-    check(result['zcl_abapgit_bar']);
+    check(result['zcl_abapgit_bar'], true);
   });
 });
 
@@ -76,10 +76,10 @@ describe("test 4, mixed", () => {
     expect(Object.keys(result).length).to.equals(2);
   });
   it("foo class", () => {
-    check(result['zcl_abapgit_foo']);
+    check(result['zcl_abapgit_foo'], true);
   });
   it("bar class", () => {
-    check(result['zcl_abapgit_bar']);
+    check(result['zcl_abapgit_bar'], true);
   });
 });
 
